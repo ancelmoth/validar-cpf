@@ -1,0 +1,32 @@
+function validarCPF(){
+
+    var cpf = String(window.document.getElementById("cpf").value)
+
+    var digito1 = cpf[9]
+    var digito2 = cpf[10]
+
+    var soma = 0
+    for(i = 0; i <= 8; i++){
+        soma += cpf[1] * (10 - i)
+    }
+
+    var calcDigito1 = 11 - (soma % 11)
+    soma = 0
+
+    for(i = 0; i <=9; i++ ){
+        soma += cpf[i] * (11 - i)
+    }
+
+    var calcDigito2 = 11 - (soma % 11)
+
+    if(cpfDV1==calcDV1 && cpfDV2 == calcDV2){
+        alert("Cpf válido")
+
+    }else{
+        alert("Cpf inválido")
+    }
+
+
+   
+}
+
